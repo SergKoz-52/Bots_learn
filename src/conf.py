@@ -1,9 +1,15 @@
 import os
 import configparser
+from dataclasses import dataclass
+# from typing import AnyStr
 
-init_file = os.path.abspath('../bots.ini')
-pars_config = configparser.ConfigParser()
-pars_config.read(init_file)
 
-print(pars_config['Bots']['spk1bot'])
+@dataclass
+class GenConf:
+    bot_name: str
+    token: str = ''
 
+    def __post_init__(self):
+        pars_config = configparser.ConfigParser()
+        pars_config.read(os.path.abspath('../bots.ini'))
+        self.token = pars_config['Bots'][self.bot_name]
