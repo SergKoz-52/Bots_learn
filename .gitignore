@@ -151,3 +151,5 @@ pip*
 
 tarballs/
 _version.py
+
+*.ini
