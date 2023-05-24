@@ -1,7 +1,6 @@
 import os
 import configparser
 from dataclasses import dataclass
-# from typing import AnyStr
 
 
 @dataclass
