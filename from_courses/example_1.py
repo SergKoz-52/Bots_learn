@@ -1,10 +1,12 @@
 import requests
 import time
 
+from src.conf import GenConf
 
+BOT_CONF = GenConf('spk1bot')
 API_URL: str = 'https://api.telegram.org/bot'
 API_CATS_URL: str = 'https://api.thecatapi.com/v1/images/search'
-BOT_TOKEN: str = '6038311450:AAFMuSjlMMjvfp3U6kWyXxAlGSh7N9VV6Fc'
+BOT_TOKEN: str = BOT_CONF.token
 ERROR_TEXT: str = 'Здесь должна была быть картинка с котиком :('
 
 offset: int = -2
